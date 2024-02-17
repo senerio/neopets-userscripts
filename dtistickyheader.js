@@ -8,9 +8,13 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
-GM_addStyle(`.closet-list header {
+GM_addStyle(`.closet-hangers-group header {
   position: sticky !important;
   top: 0;
   z-index: 1;
   background-color: rgba(255,255,255,0.75);
+}
+
+.closet-list header {
+  top: 3em;
 }`);
