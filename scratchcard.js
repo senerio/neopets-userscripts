@@ -11,7 +11,7 @@
 
 const path = window.location.pathname;
 if(path.includes('2')) {
-    $('.content form input').before(`<p><a href="${path.replace('2','')}.phtml">Scratch again</a></p>`);
+    $('.content form input').before(`<p><a href="${path.replace('2','')}">Scratch again</a></p>`);
 }
 else {
     $('select[name=card_id] option').eq(1).prop('selected', true);
