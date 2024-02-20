@@ -17,6 +17,7 @@ $('.ql-dots').css({'display': 'none'})
 $('.ql-bonus-reward').css({'flex-direction': 'row'})
 $('.ql-bonus-label').css({'display': 'none'})
 $('#QuestLogDailyAlert').css({'position': 'absolute', 'top': '0', 'bottom': '0', 'right': 'unset', 'width': '45px', 'padding-top': '0.75em', 'border-radius': '10px'})
+$('#QuestLogWeeklyAlert').css({'position': 'absolute', 'top': '0', 'bottom': '0', 'right': 'unset', 'width': '45px', 'padding-top': '0.75em', 'border-radius': '10px'})
 
 $('.questlog-quest').css({'height': 'auto'})
 $('.ql-skip').css({'display': 'none'})
