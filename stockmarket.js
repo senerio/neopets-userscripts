@@ -15,7 +15,7 @@ if(window.location.search.includes('buy')) {
 }
 
 if(window.location.search.includes('list')) {
-    const price = $('.perkbar').length ? 10 : 15;
+    const price = $('.perkBar').length ? 10 : 15;
     const ticker = $(`.content table tr td:nth-child(6):contains(${price})`).eq(-1).parent().find('td:nth-child(2)').text() || 'none';
     $('.content table').before(`<p style="text-align:center;">${ticker} selected</p>`);
     localStorage?.setItem('np_ticker', ticker);
