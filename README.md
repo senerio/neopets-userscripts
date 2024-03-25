@@ -1,3 +1,17 @@
+## [Mark Books Read](booksread.js)
+
+Marks books your pet has already read on the following locations: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions
+![books read - neopian shop](https://i.imgur.com/phFxsmH.png)
+![books read - inventory](https://i.imgur.com/WNtDF5J.png)
+![books read - sdb](https://i.imgur.com/F9KCVhj.png)
+
+Additional screenshots:
+[quick stock](https://i.imgur.com/KW9QBpM.png),
+[user shops](https://i.imgur.com/qD57RbP.png),
+[trading post](https://i.imgur.com/kToPIc6.png),
+[auctions](https://i.imgur.com/9fLSfZX.png),
+[auction genie](https://i.imgur.com/hq4KPjP.png)
+
 ## [Inventory Divider](inventorydivider.js)
 
 Separates auctioned/trading items in the inventory

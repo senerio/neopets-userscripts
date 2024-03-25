@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Obelisk
-// @version      2024-03-11
+// @version      2024-03-25
 // @description  Handle getting stuck after picking a faction/boon; displays boon details
 // @author       senerio
 // @match        *://*.neopets.com/prehistoric/battleground/
@@ -24,7 +24,7 @@ const boons = {
     "booksmarts": "+2-4 INT after reading",
     "cartogriphication": "Faerie Caverns direction",
     "cheaperdozen": "10NP Stock Market minimum",
-    "doctorwho?": "cures sick neopet in the springs",
+    "doctorwho": "cures sick neopet in the springs",
     "doppelganger": "chance to reuse one-use BD items",
     "doublebubble": "chance of potion refill",
     "equipall": "+1  weapon slot",
