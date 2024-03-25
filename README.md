@@ -1,11 +1,12 @@
 ## [Mark Books Read](booksread.js)
 
-Marks books your pet has already read on the following locations: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions
+Marks books your pet has already read on the following locations: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions. Visit the pet's [Neopian books read](https://www.neopets.com/books_read.phtml?pet_name=) and [Booktastic books read](https://www.neopets.com/moon/books_read.phtml?pet_name=) pages to save/update the list of books.
 ![books read - neopian shop](https://i.imgur.com/phFxsmH.png)
 ![books read - inventory](https://i.imgur.com/WNtDF5J.png)
 ![books read - sdb](https://i.imgur.com/F9KCVhj.png)
 
 Additional screenshots:
+[books read page](https://imgur.com/8LpPqGi),
 [quick stock](https://i.imgur.com/KW9QBpM.png),
 [user shops](https://i.imgur.com/qD57RbP.png),
 [trading post](https://i.imgur.com/kToPIc6.png),

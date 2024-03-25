@@ -22,7 +22,7 @@
 // INSTRUCTIONS
 // 1. Set reader name
 const petName = '';
-// 2. Visit pet's books read pages
+// 2. Visit pet's books read pages (redo this step whenever you'd like to update)
 //    - https://www.neopets.com/books_read.phtml?pet_name=
 //    - https://www.neopets.com/moon/books_read.phtml?pet_name=
 // 3. If you want to clear the saved data, click the reset button, top right of the books read pages
