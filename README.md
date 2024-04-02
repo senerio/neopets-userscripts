@@ -1,3 +1,20 @@
+## [Training](training.user.js)
+
+* Skips the main page and redirects to status page
+* Begin training from the status page
+
+![training 1](https://i.imgur.com/7boIeEP.png)
+After clicking "+" next to Str stat:
+![training 2](https://i.imgur.com/wby1eWy.png)
+
+## [Snowager Counter](snowager.user.js)
+
+* Records Snowager attempts and blasts
+  * To delete/reset count, append "#reset" to the URL
+* Displays customizeable quick links
+
+![snowager](https://i.imgur.com/HMJtSJB.png)
+
 ## [Mark Books Read](booksread.user.js)
 
 Marks books your pet has already read on the following locations: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions. Visit the pet's [Neopian books read](https://www.neopets.com/books_read.phtml?pet_name=) and [Booktastic books read](https://www.neopets.com/moon/books_read.phtml?pet_name=) pages to save/update the list of books.
