@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Neopets - Neoboards external links
-// @version      2024-02-17
-// @description  Adds anchor tags to external site links without them
+// @name         Neopets - Neoboards Links
+// @version      2024-05-01
+// @description  Adds clickable link to unanchored to site URLs
 // @author       senerio
 // @match        *://*.neopets.com/neoboards/topic.phtml?topic=*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=neopets.com
@@ -13,4 +13,5 @@ function attachLink(regex, e) {
     $(e).html(newHtml);
 }
 
-$('.boardPostMessage:contains("openneo.net")').each(function(e) { attachLink(/(impress(-2020)?\.openneo\.net\/[\w\/\-_?=&~]*)/g, this) })
+$('.boardPostMessage:contains("openneo.net")').each(function(e) { attachLink(/(impress(-2020)?\.openneo\.net\/[\w\/\-_?=&~\.]*)/g, this) })
+$('.boardPostMessage:contains("neopets.com")').each(function(e) { attachLink(/((www\.)?neopets\.com\/[\w\/\-_?=&~\.]*)/g, this) })
