@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Neopets - Neoboards Links
 // @version      2024-05-01
-// @description  Adds clickable link to unanchored to site URLs
+// @description  Adds clickable link to unanchored site URLs
 // @author       senerio
 // @match        *://*.neopets.com/neoboards/topic.phtml?topic=*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=neopets.com
