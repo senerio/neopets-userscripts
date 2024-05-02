@@ -1,3 +1,11 @@
+## [Expand Neopets Sliders](expandslider.user.js)
+
+* Remove the horizontal slider to view all Neopets at once for pages like lab ray, monthly freebies
+
+## [Remember Last Zap](rememberzap.user.js)
+
+* Remembers last selected pet in the lab ray
+
 ## [Training](training.user.js)
 
 * Skips the main page and redirects to status page
@@ -85,6 +93,8 @@ Picks any 15NP (10NP if with boon) stock to autofill with the max number of shar
 * Automatically opens SSW when on the SW page. If  URL has the item name (eg. opened from Jellyneo or ItemDB), places the name on the search fields.  
 ![ssw open](https://i.imgur.com/J3LduJ9.png)
 
+* Allows changing the search name/minimum price/maximum price of the resubmit button from the Shop Wizard result page
+
 ## Food Club
 
 ### [Current Bets counter](fcbetcount.user.js)
@@ -110,7 +120,7 @@ For easier management of uncategorized items via Quick Categories
 ## DTI
 
 ### [Neoboards links](neoboardlinks.user.js)
-Makes DTI links clickable on Neoboards posts
+Makes Neopets, DTI links clickable on Neoboards posts
 
 ### [Tradelist sticky headers](dtistickyheader.user.js)
 Shows you the name of the current section as you scroll
