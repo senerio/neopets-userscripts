@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Training
-// @version      2024-04-03
+// @version      2024-05-09
 // @description  Skips the main page and redirect to status page; begin training from the status page
 // @author       senerio
 // @match        *://*.neopets.com/island/training.phtml*
@@ -15,7 +15,7 @@ if(!location.search.length) {
 }
 else if(location.search.includes('status')) {
     const course = ['Level', 'Strength', 'Defence', 'Agility', 'Endurance'];
-    const pet = $('.content table tr:nth-child(2n+1) b').map((i,v) => v.innerText.split(' ')[0] ).toArray();
+    const pet = $('.content table tr:nth-child(2n+1) td:only-child b').map((i,v) => v.innerText.split(' ')[0] ).toArray(); 
     $('.content table tr:nth-child(2n) td:first-child b').each((i,v) => {
         const path = location.pathname.split('/').pop();
         $(v).after(` <a href="process_${ location.pathname.split('/').pop() }?type=start&course_type=${ course[i%5] }&pet_name=${ pet[parseInt(i/5)] }">+</a>`);
