@@ -1,3 +1,16 @@
+## [Last SW Price](lastswprice.user.js)
+* Indicates your last SW/SSW search price on various pages
+![last sw price - inventory](https://i.imgur.com/PChtlL3.png)
+
+## [Petpet Puddle](petpetpuddle.user.js)
+* Fix page display if user has many petpets
+![petpet puddle](https://i.imgur.com/tQ5eBXQ.png)
+
+## [Brain Tree Helper](braintreehelper.user.js)
+* Saves Brain Tree answers from The Esophagor
+* Adds link back to Brain Tree
+![brain tree saved answers](https://i.imgur.com/AmnzoVg.png)
+
 ## [Expand Neopets Sliders](expandslider.user.js)
 
 * Remove the horizontal slider to view all Neopets at once for pages like lab ray, monthly freebies
@@ -12,7 +25,9 @@
 * Begin training from the status page
 
 ![training 1](https://i.imgur.com/7boIeEP.png)
+
 After clicking "+" next to Str stat:
+
 ![training 2](https://i.imgur.com/wby1eWy.png)
 
 ## [Snowager Counter](snowager.user.js)
@@ -94,6 +109,7 @@ Picks any 15NP (10NP if with boon) stock to autofill with the max number of shar
 ![ssw open](https://i.imgur.com/J3LduJ9.png)
 
 * Allows changing the search name/minimum price/maximum price of the resubmit button from the Shop Wizard result page
+![sw resubmit](https://i.imgur.com/RVy2bTi.png)
 
 ## Food Club
 
@@ -126,4 +142,4 @@ Makes Neopets, DTI links clickable on Neoboards posts
 Shows you the name of the current section as you scroll
 
 ## [Lost and Pound filter](lostandpoundfilter.user.js)
-Shows only desired gender/color/species, and hide those with unwanted characters in the name. Text size is enlarged for browsing on mobile.
+Shows only desired gender/color/species/year, and hide those with unwanted characters in the name. Text size is enlarged for browsing on mobile.
