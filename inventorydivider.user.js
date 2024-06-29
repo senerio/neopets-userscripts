@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Inventory Divider
-// @version      2024-03-25
+// @version      2024-06-02
 // @description  Separate auctioned/trading items in your inventory
 // @author       senerio
 // @match        *://*.neopets.com/inventory.phtml
@@ -17,6 +17,8 @@ function separateActiveItems() {
     }
 }
 
-$(document).on('ajaxSuccess', () => {
-    separateActiveItems();
+$(document).on('ajaxSuccess', function(event, xhr, settings, data) {
+    if(settings.url.includes('inventory.php')) {
+        separateActiveItems();
+    }
 });
