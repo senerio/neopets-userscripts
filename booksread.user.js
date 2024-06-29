@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Mark Books Read
-// @version      2024-03-25
+// @version      2024-06-29
 // @description  Mark books read in: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions
 // @author       senerio
 // @match        *://*.neopets.com/books_read.phtml?pet_name=*
@@ -104,7 +104,7 @@ const booksReadPage = {
         const arr = []
         if(this.type == 'neopian') {
             bookRows.find('td:last-child').each((i,e) => {
-                booksOnPage.push( $(e).text().split(':').at(0) );
+                booksOnPage.push( $(e).text().split(': \u00a0').at(0) );
             })
             booksReadStorage.set([{
                 books: booksOnPage,

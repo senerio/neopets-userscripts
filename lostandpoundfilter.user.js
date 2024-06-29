@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Lost and Pound filter
-// @version      2024-01-28
+// @version      2024-06-02
 // @description  Filter pets
 // @author       senerio
 // @match        https://lost.quiggle.org/*
@@ -16,15 +16,18 @@
 
 const included = {
     name: '',
-    gender: 'f',
+    gender: '',
     species: [],
     colors: []
 }
 const excluded = {
-    name: /\d|_|^.+[A-Z]/,
+    name: /\d/,
     gender: '',
     species: [],
     colors: []
+}
+const exception = {
+    meta: ['Y1,', 'Y2,', 'Y3,']
 }
 
 // For browsing on mobile
@@ -47,6 +50,15 @@ function removeIf(element, action, property, value) {
     }
 }
 document.querySelectorAll('div.pet').forEach(e => {
+
+    // ignore filters for exceptions
+    if( exception.meta.some(i=> e.querySelector('.petmeta').innerText.includes(i)) ) {
+        console.log(e.querySelector('.petmeta').innerText)
+        return;
+    }
+
+    // filter
+
     let name, temp, color, species;
 
     const gender = e.classList[1];

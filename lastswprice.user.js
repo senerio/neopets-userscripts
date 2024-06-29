@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Last SW Price
-// @version      2024-04-15--2
+// @version      2024-05-21
 // @description  Indicates your last SW/SSW search price on various pages
 // @author       senerio
 // @match        *://*.neopets.com/shops/wizard.phtml*
@@ -20,11 +20,15 @@
 // @match        *://*.neopets.com/island/kitchen*.phtml*
 // @match        *://*.neopets.com/halloween/witchtower*.phtml*
 // @match        *://*.neopets.com/halloween/esophagor*.phtml*
+// @match        *://*.neopets.com/space/coincidence.phtml*
 // @match        *://*.neopets.com/winter/igloo2.phtml*
 // @match        *://*.neopets.com/donations.phtml*
 // @match        *://*.neopets.com/halloween/garage.phtml*
 // @match        *://*.neopets.com/thriftshoppe/index.phtml*
+// @match        *://*.neopets.com/faerieland/employ/employment.phtml*
+// @match        *://*.neopets.com/games/kadoatery/*
 // @grant        GM_xmlhttpRequest
+// @grant        GM_addStyle
 // @run-at       document-end
 // ==/UserScript==
 
@@ -47,6 +51,7 @@ const priceStorage = {
 
 function markItems(page) {
     const intl = new Intl.NumberFormat();
+    const style = 'font-size: x-small; color: #5088d1; margin: auto; white-space: nowrap; font-weight: normal;';
 
     let itemNameObject;
     if(typeof(page.itemNameObject) == 'string') {
@@ -57,15 +62,19 @@ function markItems(page) {
     }
 
     itemNameObject.each(function() {
-        const itemName = $(this);
-        const price = priceStorage.get( itemName.text().split('(')[0].trim() );
+        const item = $(this);
+        const itemName = (page.itemNameMatch ? item.text().match(page.itemNameMatch)[1] : item.text()).trim()
+        const price = priceStorage.get(itemName);
         if(price) {
-            const priceHTML = `<p style="font-size: x-small; color: #5088d1; margin: auto; white-space: nowrap;" class="np_price">SW: ${intl.format(price)} NP</p>`
-            if(page.write) {
-                page.write(itemName).append(priceHTML);
+            const priceHTML = `<p style="${style}" class="np_price">SW: ${intl.format(price)} NP</p>`
+            if(page.insert) {
+                page.insert(item, priceHTML);
             }
             else {
-                itemName.parent().append(priceHTML);
+                item.parent().append(priceHTML);
+            }
+            if(page.style) {
+                GM_addStyle(page.style);
             }
         }
     });
@@ -85,36 +94,37 @@ const pages = [
     {
         name: 'user shop',
         pageMatcher: /browseshop/,
-        itemNameObject: $('a[href*=buy_item] + br + b')
+        itemNameObject: $('a[href*=buy_item] + br + b'),
+        insert: (e, insert) => { return e.parent().find('br').eq(-2).after(insert); }
     },
     {
         name: 'sdb',
         pageMatcher: /safetydeposit/,
-        itemNameObject: $('.content form>table').eq(1).find('tr:not(:first-child):not(:last-child) td:nth-child(2) > b')
+        itemNameObject: $('.content form>table').eq(1).find('tr:not(:first-child):not(:last-child) td:nth-child(2) > b').map((i,v) => v.firstChild)
     },
     {
         name: 'quick stock',
         pageMatcher: /quickstock/,
         itemNameObject: $('form[name=quickstock] tr:not(:nth-last-child(2)) td:first-child:not([colspan])'),
-        write: (e) => { return e.parent().find('td:nth-of-type(2)'); }
+        insert: (e, insert) => { return e.parent().find('td:nth-of-type(2)').append(insert); }
     },
     {
         name: 'trading post',
         pageMatcher: /tradingpost/,
         itemNameObject: $('img[src*="/items/"]').parent(),
-        write: (e) => { return e.parent().find('td:nth-of-type(2)'); }
+        insert: (e, insert) => { return e.parent().find('td:nth-of-type(2)').append(insert); }
     },
     {
         name: 'auctions',
         pageMatcher: /auctions|genie/,
         itemNameObject: $('.content a[href*=auction_id]:not(:has(img))'),
-        write: (e) => { return e.parent().parent().find('td:nth-last-of-type(2)'); }
+        insert: (e, insert) => { return e.parent().parent().find('td:nth-last-of-type(2)').append(insert); }
     },
     {
         name: 'shop stock',
         pageMatcher: /market/,
         itemNameObject: $('form table').eq(0).find('tbody > tr').slice(1, -1 - 2*$('#pin_field').length).find('td:first-child b'),
-        write: (e) => { return e.eq(0).parent().parent().find('td:nth-of-type(5)'); }
+        insert: (e, insert) => { return e.eq(0).parent().parent().find('td:nth-of-type(5)').append(insert); }
     },
     {
         name: 'ingredients',
@@ -132,6 +142,13 @@ const pages = [
         itemNameObject: $('#dark-container div+p b')
     },
     {
+        name: 'coincidence',
+        pageMatcher: /coincidence/,
+        itemNameObject: $('#questItems td'),
+        itemNameMatch: /(.*)x\d+.*/,
+        insert: (e, insert) => { return e.find('b').after(insert); }
+    },
+    {
         name: 'igloo',
         pageMatcher: /igloo/,
         itemNameObject: $('form[name=items_for_sale] td b')
@@ -139,12 +156,26 @@ const pages = [
     {
         name: 'attic',
         pageMatcher: /garage/,
-        itemNameObject: $('#items li b')
+        itemNameObject: $('#items li b'),
+        insert: (e, insert) => { return e.parent().find('br').eq(-2).after(insert); },
+        style: '#items li { height: 180px !important; }'
     },
     {
         name: 'secondhand',
         pageMatcher: /thriftshoppe/,
         itemNameObject: $('.content table td a div:nth-child(2)')
+    },
+    {
+        name: 'employment',
+        pageMatcher: /employment/,
+        itemNameObject: $('.content table td[colspan=2]'),
+        itemNameMatch: / of: (.*)Time:/,
+        insert: (e, insert) => { return e.parent().find('br').eq(1).before(insert); }
+    },
+    {
+        name: 'kadoatery',
+        pageMatcher: /kadoatery/,
+        itemNameObject: $('.content strong:nth-of-type(2)')
     }
 ]
 
