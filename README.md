@@ -1,14 +1,18 @@
+## [Plot: Void Essence](plotvoidessence.user.js)
+* If void essence is found in the page, add number of void essences to the page title. Lets you quickly identify the relevant pages especially when opening multiple tabs.  
+![plot - void essence - tabs](https://i.imgur.com/bWsltkC.png)
+
 ## [Last SW Price](lastswprice.user.js)
-* Indicates your last SW/SSW search price on various pages
+* Indicates your last SW/SSW search price on various pages  
 ![last sw price - inventory](https://i.imgur.com/PChtlL3.png)
 
 ## [Petpet Puddle](petpetpuddle.user.js)
-* Fix page display if user has many petpets
+* Fix page display if user has many petpets  
 ![petpet puddle](https://i.imgur.com/tQ5eBXQ.png)
 
 ## [Brain Tree Helper](braintreehelper.user.js)
 * Saves Brain Tree answers from The Esophagor
-* Adds link back to Brain Tree
+* Adds link back to Brain Tree  
 ![brain tree saved answers](https://i.imgur.com/AmnzoVg.png)
 
 ## [Expand Neopets Sliders](expandslider.user.js)
