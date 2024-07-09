@@ -24,7 +24,7 @@
 // @match        *://*.neopets.com/winter/igloo2.phtml*
 // @match        *://*.neopets.com/donations.phtml*
 // @match        *://*.neopets.com/halloween/garage.phtml*
-// @match        *://*.neopets.com/thriftshoppe/index.phtml*
+// @match        *://*.neopets.com/thriftshoppe/*
 // @match        *://*.neopets.com/faerieland/employ/employment.phtml*
 // @match        *://*.neopets.com/games/kadoatery/*
 // @grant        GM_xmlhttpRequest
