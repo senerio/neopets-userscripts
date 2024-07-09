@@ -5,12 +5,13 @@
 // @author       senerio
 // @match        *://*.neopets.com/freebies/*
 // @match        *://*.neopets.com/lab2.phtml
+// @match        *://*.neopets.com/worlds/roo/merrygoround.phtml
+// @match        *://*.neopets.com/pound/transfer.phtml
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=neopets.com
 // @grant        GM_addStyle
 // ==/UserScript==
 
-GM_addStyle(`
-#bxlist {
+GM_addStyle(`#bxlist {
   width: auto !important;
   transform: none !important;
 }
@@ -23,5 +24,4 @@ GM_addStyle(`
 }
 br:has(+input) {
   line-height: 0.25em;
-}
-`);
+}`);

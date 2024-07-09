@@ -17,7 +17,7 @@
 
 ## [Expand Neopets Sliders](expandslider.user.js)
 
-* Remove the horizontal slider to view all Neopets at once for pages like lab ray, monthly freebies
+* Remove the horizontal slider to view all Neopets at once for pages like lab ray, monthly freebies, pound transfer
 
 ## [Remember Last Zap](rememberzap.user.js)
 
