@@ -1,6 +1,10 @@
+## [Mark Stamps Collected](stampscollected.user.js)
+Marks stamps you have already added to your album in locations like inventory, sdb, etc. Visit all pages of your [stamp album](https://www.neopets.com/stamps.phtml?type=progress) to save/update the list of stamps.
+
+Works similarly to [Mark Books Read](#mark-books-read).
+
 ## [Plot: Void Essence](plotvoidessence.user.js)
-* If void essence is found in the page, add number of void essences to the page title. Lets you quickly identify the relevant pages especially when opening multiple tabs.  
-![plot - void essence - tabs](https://i.imgur.com/bWsltkC.png)
+* Assists in collecting void essence by hiding the map image for easier clicking. Disable script when not collecting to show and interact with the map.
 
 ## [Last SW Price](lastswprice.user.js)
 * Indicates your last SW/SSW search price on various pages  

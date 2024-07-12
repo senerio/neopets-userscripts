@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Neopets - Plot: Void Essence Helper
 // @version      2024-07-08
-// @description  Assists in finding void essence by adding count to page title
+// @description  Assists in collecting void essence by hiding the map image for easier clicking
 // @author       senerio
 // @match        *://*.neopets.com/altador/index.phtml
 // @match        *://*.neopets.com/medieval/brightvale.phtml
@@ -46,11 +46,23 @@
 // @grant        none
 // ==/UserScript==
 
+/* // add count to page title
 const waitExist = setInterval(function() {
     const voidEssenceCount = $('.tvw-essence').length;
     if (voidEssenceCount) {
         document.title = `(${voidEssenceCount}) `.concat(document.title);
         clearInterval(waitExist);
     }
+ }, 1000);
+ */
+
+// hide map to show only essences
+const waitExist = setInterval(function() {
+    const element = $('#canvas');
+    if (element.length) {
+        element.css('display', 'none')
+        clearInterval(waitExist);
+    }
+    console.log('waiting...');
  }, 1000);
  
