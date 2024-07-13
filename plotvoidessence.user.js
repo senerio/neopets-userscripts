@@ -43,7 +43,7 @@
 // @match        *://*.neopets.com/space/index.phtml
 // @match        *://*.neopets.com/pirates/warfwharf.phtml
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=neopets.com
-// @grant        none
+// @grant        GM_addStyle
 // ==/UserScript==
 
 /* // add count to page title
@@ -57,12 +57,4 @@ const waitExist = setInterval(function() {
  */
 
 // hide map to show only essences
-const waitExist = setInterval(function() {
-    const element = $('#canvas');
-    if (element.length) {
-        element.css('display', 'none')
-        clearInterval(waitExist);
-    }
-    console.log('waiting...');
- }, 1000);
- 
+GM_addStyle(`#canvas { display: none!important; }`)
