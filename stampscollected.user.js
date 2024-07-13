@@ -131,7 +131,7 @@ if(loc.includes('stamps')) {
 }
 else if(!loc.match('stamps') && localStorage.hasOwnProperty(itemStorage.key)) {
     const page = pages.find((i) => loc.match(i.pageMatcher));
-    if( !['inventory'].includes(page.name) ) {
+    if( ['inventory'].includes(page.name) ) {
        // for pages that fetch items with ajax call
        $(document).on('ajaxSuccess', () => {
            markItems($(page.itemNameObject));
