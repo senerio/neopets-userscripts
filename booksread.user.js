@@ -13,6 +13,7 @@
 // @match        *://*.neopets.com/island/tradingpost.phtml*
 // @match        *://*.neopets.com/auctions.phtml*
 // @match        *://*.neopets.com/genie.phtml*
+// @match        *://items.jellyneo.net/search/*
 // @connect      itemdb.com.br
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
@@ -196,6 +197,12 @@ const pages = [
         pageMatcher: /auctions|genie/,
         itemNameObject: $('.content a[href*=auction_id]:not(:has(img))'),
         table: true
+    },
+    {
+        name: 'Jellyneo Search',
+        pageMatcher: /jellyneo.*search/,
+        itemNameObject: $('.jnflex-grid p a.no-link-icon:nth-of-type(2)'),
+        table: false
     }
 ]
 

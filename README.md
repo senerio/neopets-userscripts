@@ -10,7 +10,7 @@ Works similarly to [Mark Books Read](#mark-books-read).
 * Indicates your last SW/SSW search price on various pages  
 ![last sw price - inventory](https://i.imgur.com/PChtlL3.png)
 
-## [Petpet Puddle](petpetpuddle.user.js)
+## [Petpet Puddle and Lab Ray](petpetpuddle.user.js)
 * Fix page display if user has many petpets  
 ![petpet puddle](https://i.imgur.com/tQ5eBXQ.png)
 

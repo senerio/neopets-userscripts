@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         Neopets - Petpet Puddle
-// @version      2024-05-15
+// @name         Neopets - Petpet Puddle and Lab Ray
+// @version      2024-07-22
 // @description  Fix page display with many petpets
 // @author       senerio
 // @match        *://*.neopets.com/pool/puddle.phtml
@@ -9,4 +9,5 @@
 // @grant        none
 // ==/UserScript==
 
-$('.content table').wrap('<div style="overflow-x: auto; width: 790px; margin: auto;"></div>');
+$('.content table').wrap('<div style="overflow-x: auto; width: 790px; margin: auto;"></div>'); // horizontal scroll
+$('.content table td').css({'display': 'inline-block'}); // expand
