@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Wishing Well autofill
-// @version      2024-05-15
+// @version      2024-08-11
 // @description  Autofill donation amount and item name; no autofill if 7 wishes are done
 // @author       senerio, Monfo
 // @match        *://*.neopets.com/wishing.phtml*
@@ -11,7 +11,7 @@
 // Change the "item" variable to whichever item you'd like to wish for
 const item = 'Snowager Stamp';
 
-if ((!window.location.search && document.querySelector('.content').children[9].children.length === 1) || (window.location.search && document.querySelector('.content').children.length === 14)) {
+if ((!window.location.search && document.querySelector('.content').children[8].children.length === 1) || (window.location.search && document.querySelector('.content').children.length === 13)) {
     $('input[name=donation]').val('21');
     $('input[name=wish]').val(item);
 };
