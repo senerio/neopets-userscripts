@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Last SW Price
-// @version      2024-05-21
+// @version      2024-08-18
 // @description  Indicates your last SW/SSW search price on various pages
 // @author       senerio
 // @match        *://*.neopets.com/shops/wizard.phtml*
@@ -27,6 +27,9 @@
 // @match        *://*.neopets.com/thriftshoppe/*
 // @match        *://*.neopets.com/faerieland/employ/employment.phtml*
 // @match        *://*.neopets.com/games/kadoatery/*
+// @match        *://*.neopets.com/island/training.phtml*
+// @match        *://*.neopets.com/pirates/academy.phtml*
+// @match        *://*.neopets.com/island/fight_training.phtml*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
 // @run-at       document-end
@@ -176,6 +179,16 @@ const pages = [
         name: 'kadoatery',
         pageMatcher: /kadoatery/,
         itemNameObject: $('.content strong:nth-of-type(2)')
+    },
+    {
+        name: 'island training',
+        pageMatcher: /training/,
+        itemNameObject: $('img[src*="/items/"]').parent().find('b').map((i, v) => v.firstChild)
+    },
+    {
+        name: 'pirate academy',
+        pageMatcher:/academy/,
+        itemNameObject: $('img[src*="/items/"]').parent().parent().find('b')
     }
 ]
 
