@@ -1,3 +1,7 @@
+## [Helper for JN SDB Price Checker](jnsdbhelper.user.js)
+Saves items in a list as you visit the pages of your SDB. Adds a textarea below the SDB which contains the source code of all the items saved so far, which you can copy and paste to [Jellyneo's SDB Price Checker Tool](https://items.jellyneo.net/tools/sdb-price-checker/).  
+![jn sdb helper](https://i.imgur.com/5p7xrgV.png)
+
 ## [Mark Stamps Collected](stampscollected.user.js)
 Marks stamps you have already added to your album in locations like inventory, sdb, etc. Visit all pages of your [stamp album](https://www.neopets.com/stamps.phtml?type=progress) to save/update the list of stamps.
 
