@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Lunar Temple
-// @version      2024-01-15
+// @version      2024-12-02
 // @description  Highlights the correct answer for Shenkuu Lunar Temple
 // @author       senerio
 // @match        *://*.neopets.com/shenkuu/lunar/?show=puzzle
@@ -10,7 +10,7 @@
 
 const choices = document.querySelectorAll('.content form td');
 if(!!choices.length) {
-    let phase = Math.round( document.querySelector('.content div script+script').innerHTML.match(/angleKreludor=(\d+)/)[1] / 22.5 );
+    let phase = Math.round( document.querySelector('.content div[style="width: 635px;"] script+script').innerHTML.match(/angleKreludor=(\d+)/)[1] / 22.5 );
     if ( [16, 8, 9,10,11,12,13,14,15].includes(phase)) { phase -= 8; }
     else if ([0, 1, 2, 3, 4, 5, 6, 7].includes(phase)) { phase += 8; }
     choices[phase].setAttribute('style', 'background-color: rgb(255, 203, 0);');
