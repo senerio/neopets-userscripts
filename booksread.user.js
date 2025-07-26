@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Mark Books Read
-// @version      2024-06-29
+// @version      2025-07-26
 // @description  Mark books read in: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions
 // @author       senerio
 // @match        *://*.neopets.com/books_read.phtml?pet_name=*
@@ -13,6 +13,7 @@
 // @match        *://*.neopets.com/island/tradingpost.phtml*
 // @match        *://*.neopets.com/auctions.phtml*
 // @match        *://*.neopets.com/genie.phtml*
+// @match        *://*.neopets.com/generalstore.phtml*
 // @match        *://items.jellyneo.net/search/*
 // @connect      itemdb.com.br
 // @grant        GM_xmlhttpRequest
@@ -196,6 +197,12 @@ const pages = [
         name: 'auctions',
         pageMatcher: /auctions|genie/,
         itemNameObject: $('.content a[href*=auction_id]:not(:has(img))'),
+        table: true
+    },
+    {
+        name: 'general store',
+        pageMatcher: /generalstore/,
+        itemNameObject: $(".contentModule:has(td.contentModuleHeader:contains('Books')) .contentModuleContent .item-title"),
         table: true
     },
     {
