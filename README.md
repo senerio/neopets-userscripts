@@ -79,13 +79,9 @@ Separates auctioned/trading items in the inventory
 ## Quest Log
 
 ### [Compact Quest Log](compactquestlog.user.js)
+### [Quest Log Links](questloglinks.user.js)
 
-![quest log 1](https://i.imgur.com/0Bwz1a0.png)
-
-Additional screenshots:
-[claim daily](https://i.imgur.com/EQUUus7.png), 
-[claimed](https://i.imgur.com/ArCxwgM.png),
-["Purchase an Item" count](https://i.imgur.com/QX4A2nP.png)
+![compact quest log](https://i.imgur.com/0Bwz1a0.png)
 
 ### [Quest Log navigation button](questlogbutton.user.js)
 
