@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neopets - Mark Books Read
-// @version      2025-07-26
+// @version      2025-08-27
 // @description  Mark books read in: inventory, neopian shops, user shops, sdb, quick stock, trading post, auctions
 // @author       senerio
 // @match        *://*.neopets.com/books_read.phtml?pet_name=*
@@ -16,6 +16,8 @@
 // @match        *://*.neopets.com/generalstore.phtml*
 // @match        *://items.jellyneo.net/search/*
 // @connect      itemdb.com.br
+// @grant        GM_getValue
+// @grant        GM_setValue
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // ==/UserScript==
@@ -63,7 +65,13 @@ function itemdbGetItemName(array) { // SMH BOOKTASTIC BOOKS PAGE WHY NO BOOK NAM
 const booksReadStorage = {
     'key': 'np_booksread',
     'get': function() {
-        return JSON.parse(localStorage?.getItem(this.key)) || {};
+        if (localStorage[this.key]) {
+            return JSON.parse(localStorage?.getItem(this.key));
+        } else if (GM_getValue(this.key, false)) {
+            return JSON.parse(GM_getValue(this.key, ""));
+        }
+
+        return {};
     },
     'set': function(arr) { // [ {books, key, append} ]
         const books = booksReadStorage.get();
@@ -71,6 +79,7 @@ const booksReadStorage = {
             if(!i.append) { books[i.key] = []; }
             (books[i.key] ??= []).push(...i.books);
         })
+        GM_setValue(this.key, JSON.stringify(books));
         localStorage?.setItem(this.key, JSON.stringify(books));
     },
     'all': function() {
@@ -220,7 +229,7 @@ if(loc.match(/books_read/) && loc.includes(petName)) {
     booksReadPage.displayInitialize();
     booksReadPage.storeBooksOnPage();
 }
-else if(!loc.match(/books_read/) && localStorage.hasOwnProperty(booksReadStorage.key)) {
+else if(!loc.match(/books_read/) && (localStorage.hasOwnProperty(booksReadStorage.key) || GM_getValue(booksReadStorage.key, false))) {
     const page = pages.find((i) => {
         return loc.match(i.pageMatcher)
     });
