@@ -1,3 +1,8 @@
+## [Mark NeoDeck Cards Owned](neodeck.user.js)
+Marks cards you own in locations like inventory, sdb, etc. Visit [Your NeoDeck cards](https://www.neopets.com/games/neodeck/index.phtml?show=cards) page to save/update the list.
+
+Works similarly to [Mark Books Read](#mark-books-read).
+
 ## [Helper for JN SDB Price Checker](jnsdbhelper.user.js)
 Saves items in a list as you visit the pages of your SDB. Adds a textarea below the SDB which contains the source code of all the items saved so far, which you can copy and paste to [Jellyneo's SDB Price Checker Tool](https://items.jellyneo.net/tools/sdb-price-checker/).  
 ![jn sdb helper](https://i.imgur.com/5p7xrgV.png)
